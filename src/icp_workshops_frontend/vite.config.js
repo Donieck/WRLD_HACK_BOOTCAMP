@@ -3,10 +3,12 @@ import { defineConfig } from 'vite';
 import environment from 'vite-plugin-environment';
 import vue from '@vitejs/plugin-vue';
 import dotenv from 'dotenv';
+import tailwindcss from '@tailwindcss/vite';
 
 dotenv.config({ path: '../../.env' });
 
 export default defineConfig({
+  
   build: {
     emptyOutDir: true,
   },
@@ -29,6 +31,11 @@ export default defineConfig({
     vue(),
     environment('all', { prefix: 'CANISTER_' }),
     environment('all', { prefix: 'DFX_' }),
+    export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+})
   ],
   resolve: {
     alias: [
